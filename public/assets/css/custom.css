@@ -1,0 +1,26 @@
+#runners-form {
+	margin-top: 20px;
+}
+
+.common-select{
+	max-width: 600px;
+}
+
+.radio {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.custom-accordition{
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-left:15px;
+}
+
+.collapsed-content{
+	margin-top:10px;
+}
+
+.custom-content-box{
+	padding-bottom:36px;
+}

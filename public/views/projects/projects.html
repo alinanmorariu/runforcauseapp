@@ -1,0 +1,63 @@
+ <section class="wrapper">	
+     <h3><i class="fa"></i>Proiecte/Projects</h3> 
+              <div class="row mt">
+                  <div class="col-md-12">
+                      <section class="task-panel tasks-widget">
+                          <div class="panel-body">
+                              <div class="task-content">
+                                  <ul class="task-list">
+                                      <li>
+                                          <div class="task-title">
+                                              <span class="task-title-sp">
+                                                  <label class="col-sm-2 col-sm-2 control-label">Denumire ONG/NGO name</label>
+                                                      <div class="col-sm-3">
+                                                          <input type="text" class="form-control" ng-model="project.ngoName">
+                                                      </div>
+                                                      <label class="col-sm-2 col-sm-2 control-label">Denumire proiect/Project name</label>
+                                                      <div class="col-sm-3">
+                                                          <input type="text" class="form-control" ng-model="project.name">
+                                                      </div>
+                                                      </span>
+                                             <div class="pull-right hidden-phone">
+                                              <div class=" add-task-row">
+                                                  <button class="btn btn-success btn-sm pull-left" ng-click="addProject()">Adaugă proiect/Add project</button>
+                                              </div>
+                                             </div>
+                                          </div>
+                                      </li>                                      
+                                      <li ng-repeat="project in projects | orderBy:'ngoName'">
+                                          <div class="task-title">
+                                              <span class="task-title-sp">{{project.ngoName}} - {{project.name}}</span>
+                                              <div class="pull-right hidden-phone">
+                                                  <button class="btn btn-primary btn-xs" ng-click="editProject(project._id); isCollapsed = !isCollapsed"><i class="fa fa-pencil"></i></button>
+                                                  <button class="btn btn-danger btn-xs" ng-click="removeProject(project._id)"><i class="fa fa-trash-o "></i></button>
+                                              </div>
+                                              <div collapse="isCollapsed" class="collapsed-content">
+                                            		<div class="well well-lg custom-content-box">
+                                                        <span class="task-title-sp">
+                                                            <label class="col-sm-2 col-sm-2 control-label">Denumire ONG/NGO name</label>
+                                                              <div class="col-sm-3">
+                                                                  <input type="text" class="form-control" ng-model="project.ngoName">
+                                                              </div>
+                                                              <label class="col-sm-2 col-sm-2 control-label">Denumire proiect/Project name</label>
+                                                              <div class="col-sm-3">
+                                                                  <input type="text" class="form-control" ng-model="project.name">
+                                                              </div>
+                                                      </span>
+                                                      <div class="pull-right hidden-phone">
+                                                          <div class="pull-right hidden-phone">
+                                                              <button class="btn btn-success btn-sm" ng-click="saveProject()">Salvează/Save</button>
+                                                              <button class="btn btn-danger btn-sm" ng-click="cancel()">Cancel</i></button>
+                                                          </div>
+                                                      </div>
+                                                    </div> 
+                                            </div>
+                                          </div>
+                                      </li>                              
+                                  </ul>
+                              </div>
+                          </div>
+                      </section>
+                  </div><!-- /col-md-12-->
+              </div><!-- /row -->
+ </section>

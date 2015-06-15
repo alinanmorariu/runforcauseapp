@@ -1,0 +1,381 @@
+          <section class="wrapper">
+          	<h3><i class="fa"></i>Înscriere alergător/Runner registration</h3>        	
+          	<!-- BASIC FORM ELELEMNTS -->
+          	<div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                       <tabset justified="true">
+<!--INDIVIDUAL RUNNER FORM-->
+                        <tab heading="Alergător individual/Individual runner">
+                        <form class="form-horizontal style-form" id="runners-form" method="get">
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Nume/Name</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Prenume/Forname</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-6">                                
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />                     
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg la cursa/I want to run</label>
+                                <div class="col-sm-6">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Cros (4km)/Cross(4km)</option>
+                                    <option>Semimaraton (21km)/Halfmarathon (21km)</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-6">
+                                  <select class="form-control">
+                                    <option></option>
+                      						  <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                      						  <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Localitatea/City</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Email/Email</label>
+                              <div class="col-sm-6">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Record personal/Personal best</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                      </form>        
+                               <button type="button" class="btn btn-primary">Trimite/Submit</button>
+                        </tab>
+                        
+<!-- RELAY RUNNERS FORM-->
+                        <tab heading="Alergători ștafetă/Relay runners">
+                        	<div class="radio">
+                						  <label>
+                						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                						    Ștafetă 2x10km
+                						  </label>
+                						</div>
+                						<div class="radio">
+                						  <label>
+                						    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                						    Ștafetă 4x5km
+                						  </label>
+                						</div>
+                						
+                        <form class="form-horizontal style-form" id="runners-form" method="get">
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Denumire ștafetă/Relay name</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                          <label class="col-sm-2 col-sm-2 control-label">Vă rugăm să completați datele/Please fill in</label>
+                          <accordion close-others="oneAtATime">
+                          <accordion-group class="col-sm-6 custom-accordition" heading="Alergătorul 1/Runner 1 >>">
+                            <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Nume/Name</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Prenume/Forname</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-9">                                                               
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />       
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-9">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                                    <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Localitatea/City</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Email/Email</label>
+                              <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                          </accordion-group>
+                          </accordion>
+                          </div>
+                          <div class="form-group">
+                          <label class="col-sm-2 col-sm-2 control-label">&nbsp</label>
+                          <accordion close-others="oneAtATime">
+                          <accordion-group class="col-sm-6 custom-accordition" heading="Alergătorul 2/Runner 2 >>">
+                            <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Nume/Name</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Prenume/Forname</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-9">                                                               
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />       
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-9">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                                    <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Localitatea/City</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Email/Email</label>
+                              <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                          </accordion-group>
+                          </accordion>
+                          </div>
+                          <div class="form-group">
+                          <label class="col-sm-2 col-sm-2 control-label">&nbsp</label>
+                          <accordion close-others="oneAtATime">
+                          <accordion-group class="col-sm-6 custom-accordition" heading="Alergătorul 3/Runner 3 >>">
+                            <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Nume/Name</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Prenume/Forname</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-9">                                                               
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />       
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-9">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                                    <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Localitatea/City</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Email/Email</label>
+                              <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                          </accordion-group>                          
+                          </accordion>
+                          </div>
+                          <div class="form-group">
+                          <label class="col-sm-2 col-sm-2 control-label">&nbsp</label>
+                          <accordion close-others="oneAtATime">
+                          <accordion-group class="col-sm-6 custom-accordition" heading="Alergătorul 4/Runner 4 >>">
+                            <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Nume/Name</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Prenume/Forname</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-9">                                                               
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />       
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-9">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                                    <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Localitatea/City</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-3 col-sm-3 control-label">Email/Email</label>
+                              <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                          </accordion-group>
+                          </accordion>
+                          </div>                       
+                      </form>        
+                               <button type="button" class="btn btn-primary">Trimite/Submit</button>
+                        </tab>
+<!--CHILDRENS RACE RUNNERS FORM-->
+                        <tab heading="Cursa copiilor/Childrens race">
+                        <form class="form-horizontal style-form" id="runners-form" method="get">
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Nume/Name</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Prenume/Forname</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Data nașterii/Date of birth</label>
+                              <div class="col-sm-6">                                
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />                     
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg la cursa/I want to run</label>
+                                <div class="col-sm-6">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>4-6 ani (400m)</option>
+                                    <option>7-9 ani (800m)</option>
+                                    <option>10-12 ani (1200m)</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
+                                <div class="col-sm-6">
+                                  <select class="form-control">
+                                    <option></option>
+                                    <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
+                                    <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                  </select>
+                                </div>                        
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Localitatea/City</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Număr de telefon/Phone number</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Email/Email</label>
+                              <div class="col-sm-6">
+                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                              </div>
+                          </div>
+                      </form>        
+                               <button type="button" class="btn btn-primary">Trimite/Submit</button>
+                        </tab>               
+                      </tabset>
+          			</div><!-- /form-panel -->
+          		</div><!-- /col-lg-12 -->
+          	</div><!-- /row -->  	
+		</section><!--/wrapper -->
