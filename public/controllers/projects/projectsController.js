@@ -13,29 +13,44 @@ projects.controller('projectsController', ['$scope', '$http', function($scope, $
 	refresh();
 	
 	$scope.addProject = function(){
-		$http.post('/projects', $scope.project).success(function(response){
+		$http.post('/projects', $scope.newProject).success(function(response){
 			refresh();
+			$scope.newProject = "";
 		})
 	}
 	
 	$scope.removeProject = function(id){
-		console.log(id);
-		$http.delete('/projects/' + id).success(function(response){
-			refresh();
-		})
+		var confirmDeletion = confirm('Are you sure you want to delete project ' + id + '?');
+		if (confirmDeletion == true) {
+				$http.delete('/projects/' + id).success(function(response){
+					refresh();
+			})
+			return true;
+		}
+		else {
+			return false;
+		}	
 	};
 	
 	$scope.editProject = function(id){
 		$http.get('/projects/' + id).success(function(response){
-			$scope.project = response;		
+			$scope.project = response;
+			console.log(response);		
 		})
 	}
 	
 	$scope.saveProject = function(){
-		console.log($scope.project._id);
-		$http.put('/projects/' + $scope.project._id, $scope.project).success(function(response){
-			refresh();
-		})
+		var confirmUpdate = confirm ('Are you sure you want to make changes to project ' + $scope.project._id + '?');
+		if (confirmUpdate == true){				
+				$http.put('/projects/' + $scope.project._id, $scope.project).success(function(){
+					console.log($scope.project);
+					refresh();						
+			})
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	$scope.isCollapsed = true;

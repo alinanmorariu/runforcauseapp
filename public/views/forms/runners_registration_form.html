@@ -11,25 +11,25 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nume/Name</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="runner.name">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Prenume/Forname</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="runner.forname">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Data nașterii/Date of birth</label>
                               <div class="col-sm-6">                                
-                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />                     
+                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" ng-model="runner.dob" />                     
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg la cursa/I want to run</label>
                                 <div class="col-sm-6">
-                                  <select class="form-control">
+                                  <select class="form-control" ng-model="runner.race">
                                     <option></option>
                                     <option>Cros (4km)/Cross(4km)</option>
                                     <option>Semimaraton (21km)/Halfmarathon (21km)</option>
@@ -39,39 +39,38 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Doresc să alerg pentru proiectul/I want to run for</label>
                                 <div class="col-sm-6">
-                                  <select class="form-control">
+                                  <select class="form-control" ng-model="runner.project">
                                     <option></option>
-                      						  <option>Animal Life - Adăpost pentru câinii abandonați/Animal Life - Adăpost pentru câinii abandonați</option>
-                      						  <option>Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului/Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                      						  <option ng-repeat="project in projects"></option>
                                   </select>
                                 </div>                        
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Localitatea/City</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="runner.city">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Număr de telefon/Phone number</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="runner.phone">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Email/Email</label>
                               <div class="col-sm-6">
-                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                                  <input type="email" class="form-control" id="exampleInputEmail2" ng-model="runner.email">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Record personal/Personal best</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="runner.best">
                               </div>
                           </div>
                       </form>        
-                               <button type="button" class="btn btn-primary">Trimite/Submit</button>
+                               <button type="button" class="btn btn-primary" ng-click="addRunner()">Trimite/Submit</button>
                         </tab>
                         
 <!-- RELAY RUNNERS FORM-->
