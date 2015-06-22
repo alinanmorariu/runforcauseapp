@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var projectsdb = mongojs('projects', ['projects', 'runners']);
+var projectsdb = mongojs('projects', ['projects']);
+var runnersdb = mongojs('runners', ['runners'])
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
@@ -44,36 +45,36 @@ app.put('/projects/:id', function(req, res){
 		});
 })
 
-app.get('/projects', function(req, res){
-	projectsdb.runners.find(function(err, docs){
+app.get('/runners', function(req, res){
+	runnersdb.runners.find(function(err, docs){
 		res.json(docs);
 	});
 });
 
-app.post('/projects', function(req, res){
-	projectsdb.runners.insert(req.body, function(err, doc){
+app.post('/runners', function(req, res){
+	runnersdb.runners.insert(req.body, function(err, doc){
 		res.json(doc);
 	});
 });
 
-app.delete('/projects/:id', function(req, res){
+app.delete('/runners/:id', function(req, res){
 	var id = req.params.id;
-	projectsdb.runners.remove({_id: mongojs.ObjectId(id)}, function(err,doc){
+	runnersdb.runners.remove({_id: mongojs.ObjectId(id)}, function(err,doc){
 		res.json(doc);
 	})
 })
 
-app.get('/projects/:id', function(req, res){
+app.get('/runners/:id', function(req, res){
 	var id = req.params.id;
-	projectsdb.runners.findOne({_id: mongojs.ObjectId(id)}, function(err, doc){
+	runnersdb.runners.findOne({_id: mongojs.ObjectId(id)}, function(err, doc){
 		res.json(doc);
 	})
 })
 
-app.put('/projects/:id', function(req, res){
+app.put('/runners/:id', function(req, res){
 	var id = req.params.id;
 	console.log(req.body.name);
-	projectsdb.runners.findAndModify({query: {_id: mongojs.ObjectId(id)},
+	runnersdb.runners.findAndModify({query: {_id: mongojs.ObjectId(id)},
 		update: {$set: {runnerName: req.body.name, runnerForname: req.body.forname, runnerDob: req.body.dob, runnerProject: req.body.project, runnerCity:req.body.city, runnerPhone: req.body.phone, runnerEmail: req.body.phone, runnerBest: req.body.best}},
 		new: true}, function(err, doc){
 			console.log(doc);

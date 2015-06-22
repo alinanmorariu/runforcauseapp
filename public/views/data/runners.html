@@ -1,4 +1,47 @@
  <section class="wrapper">
           	<h3><i class="fa"></i>Runners</h3> 
-			<p>To be implemented</p>
+			          <div class="row mt">
+                  <div class="col-md-12">
+                      <section class="task-panel tasks-widget">
+                          <div class="panel-body">
+                              <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+									<th>Id</th>
+                                    <th>Name</th>
+                                    <th>Forname</th>
+                                    <th>DOB</th>
+                                    <th>Race</th>
+									<th>Project</th>
+									<th>City</th>
+									<th>Phone</th>
+									<th>Email</th>
+									<th>Personal best</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr class="odd gradeX" ng-repeat="runner in runners | orderBy:'_id'">
+                                    <td>{{runner._id}}</td>
+                                    <td>{{runner.name}}</td>
+                                    <td>{{runner.forname}}</td>
+                                    <td>{{runner.dob}}</td>
+									<td>{{runner.race}}</td>
+									<td>{{runner.project}}</td>
+									<td>{{runner.city}}</td>
+									<td>{{runner.phone}}</td>
+									<td>{{runner.email}}</td>
+									<td>{{runner.best}}</td>
+                                    <td><button class="btn btn-primary btn-xs" ng-click="editRunner(runner._id); isCollapsed = !isCollapsed"><i class="fa fa-pencil"></i></button></td>
+                                    <td><button class="btn btn-danger btn-xs" ng-click="removeRunner(runner._id)"><i class="fa fa-trash-o "></i></button></td>
+                                 </tr>
+                             </tbody>
+                        </table>
+                        <div>
+                          </div>
+                      </section>
+                  </div><!-- /col-md-12-->
+              </div><!-- /row -->
  </section>

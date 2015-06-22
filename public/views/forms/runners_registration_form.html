@@ -7,7 +7,7 @@
                        <tabset justified="true">
 <!--INDIVIDUAL RUNNER FORM-->
                         <tab heading="Alergător individual/Individual runner">
-                        <form class="form-horizontal style-form" id="runners-form" method="get">
+                        <form class="form-horizontal style-form" id="runners-form">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nume/Name</label>
                               <div class="col-sm-6">
@@ -23,7 +23,7 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Data nașterii/Date of birth</label>
                               <div class="col-sm-6">                                
-                                      <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" ng-model="runner.dob" />                     
+                                      <input type="date" class="form-control" datepicker-popup ng-model="runner.dob" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>     
                               </div>
                           </div>
                           <div class="form-group">
@@ -41,7 +41,7 @@
                                 <div class="col-sm-6">
                                   <select class="form-control" ng-model="runner.project">
                                     <option></option>
-                      						  <option ng-repeat="project in projects"></option>
+                      						  <option ng-repeat="project in projects" ng-value="project.name">{{project.name}}</option>
                                   </select>
                                 </div>                        
                           </div>
@@ -69,9 +69,9 @@
                                   <input type="text" class="form-control" ng-model="runner.best">
                               </div>
                           </div>
-                      </form>        
-                               <button type="button" class="btn btn-primary" ng-click="addRunner()">Trimite/Submit</button>
-                        </tab>
+                          <button type="button" class="btn btn-primary" ng-click="addRunner()">Trimite/Submit</button>
+                      </form>                            
+                     </tab>
                         
 <!-- RELAY RUNNERS FORM-->
                         <tab heading="Alergători ștafetă/Relay runners">

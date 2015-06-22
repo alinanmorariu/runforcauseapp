@@ -1,4 +1,4 @@
-var runForCauseApp = angular.module('runForCauseApp', ['ui.bootstrap', 'ngRoute', 'runnersForm', 'projects']);
+var runForCauseApp = angular.module('runForCauseApp', ['ui.bootstrap', 'ngRoute', 'runnersForm', 'projects', 'runners']);
 
 // routes
 runForCauseApp.config(function($routeProvider) {
