@@ -36,14 +36,12 @@ app.get('/projects/:id', function(req, res){
 
 app.put('/projects/:id', function(req, res){
 	var id = req.params.id;
-	console.log(req.body.name);
 	projectsdb.projects.findAndModify({query: {_id: mongojs.ObjectId(id)},
 		update: {$set: {ngoName: req.body.ngoName, name: req.body.name}},
 		new: true}, function(err, doc){
-			console.log(doc);
 			res.json(doc);
 		});
-})
+});
 
 app.get('/runners', function(req, res){
 	runnersdb.runners.find(function(err, docs){
@@ -73,14 +71,12 @@ app.get('/runners/:id', function(req, res){
 
 app.put('/runners/:id', function(req, res){
 	var id = req.params.id;
-	console.log(req.body.name);
 	runnersdb.runners.findAndModify({query: {_id: mongojs.ObjectId(id)},
-		update: {$set: {runnerName: req.body.name, runnerForname: req.body.forname, runnerDob: req.body.dob, runnerProject: req.body.project, runnerCity:req.body.city, runnerPhone: req.body.phone, runnerEmail: req.body.phone, runnerBest: req.body.best}},
+		update: {$set: {name:req.body.name, forname:req.body.forname, dob:req.body.dob, race:req.body.race, project:req.body.project, city:req.body.city, phone:req.body.phone, email:req.body.email}},
 		new: true}, function(err, doc){
-			console.log(doc);
 			res.json(doc);
 		});
-})
+});
 
 app.listen(3000);
 

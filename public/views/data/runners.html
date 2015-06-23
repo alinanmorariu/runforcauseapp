@@ -50,7 +50,6 @@
                                   <table class="table table-striped table-advance table-hover">
                                       <thead>
                                           <tr>
-                                              <th>Id</th>
                                               <th>Name</th>
                                               <th>Forname</th>
                                               <th>DOB</th>
@@ -66,7 +65,6 @@
                                       </thead>
                                       <tbody>
                                           <tr ng-repeat="runner in runners | orderBy:'_id'">
-                                              <td>{{runner._id}}</td>
                                               <td>{{runner.name}}</td>
                                               <td>{{runner.forname}}</td>
                                               <td>{{runner.dob}}</td>

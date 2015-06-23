@@ -27,7 +27,9 @@ runners.controller('runnersController', ['$scope', '$http', '$window', function(
 	$scope.saveRunner = function(){
 		var confirmUpdate = confirm ('Are you sure you want to make changes to runner ' + $scope.runner._id + '?');
 		if (confirmUpdate == true){				
-				$http.put('/runners/' + $scope.runner._id, $scope.runner).success(function(){			
+				$http.put('/runners/' + $scope.runner._id, $scope.runner).success(function(response){
+					alert('Changes have been saved!');
+					$window.location.reload();			
 			})
 			return true;
 		}
@@ -40,4 +42,5 @@ runners.controller('runnersController', ['$scope', '$http', '$window', function(
 	$scope.cancel = function(){
 		$scope.isCollapsed = true;
 	}
+
 }]);

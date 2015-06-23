@@ -40,10 +40,10 @@ projects.controller('projectsController', ['$scope', '$http', function($scope, $
 	}
 	
 	$scope.saveProject = function(){
+		console.log($scope.project._id);
 		var confirmUpdate = confirm ('Are you sure you want to make changes to project ' + $scope.project._id + '?');
 		if (confirmUpdate == true){				
-				$http.put('/projects/' + $scope.project._id, $scope.project).success(function(){
-					console.log($scope.project);
+				$http.put('/projects/' + $scope.project._id, $scope.project).success(function(response){					
 					refresh();						
 			})
 			return true;
