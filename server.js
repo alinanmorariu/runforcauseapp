@@ -37,8 +37,8 @@ app.get('/projects/:id', function(req, res){
 app.put('/projects/:id', function(req, res){
 	var id = req.params.id;
 	projectsdb.projects.findAndModify({query: {_id: mongojs.ObjectId(id)},
-		update: {$set: {ngoName: req.body.ngoName, name: req.body.name}},
-		new: true}, function(err, doc){
+		update: {$set: {name: req.body.name, ngoName: req.body.ngoName}},
+		new: true}, function(err,doc){
 			res.json(doc);
 		});
 });

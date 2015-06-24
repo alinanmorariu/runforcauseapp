@@ -1,12 +1,15 @@
 var projects = angular.module ('projects', []);
 
 
-projects.controller('projectsController', ['$scope', '$http', function($scope, $http) {
+projects.controller('projectsController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+	
+	$scope.isCollapsed = true;
 	
 	var refresh = function(){
 		$http.get('/projects').success(function(response){
 			$scope.projects = response;
 			$scope.project = "";
+			$scope.newProject = "";
 		});
 	};
 	
@@ -14,8 +17,8 @@ projects.controller('projectsController', ['$scope', '$http', function($scope, $
 	
 	$scope.addProject = function(){
 		$http.post('/projects', $scope.newProject).success(function(response){
-			refresh();
-			$scope.newProject = "";
+			alert('The poject has been added!');
+		    $window.location.reload();	
 		})
 	}
 	
@@ -34,26 +37,24 @@ projects.controller('projectsController', ['$scope', '$http', function($scope, $
 	
 	$scope.editProject = function(id){
 		$http.get('/projects/' + id).success(function(response){
-			$scope.project = response;
-			console.log(response);		
-		})
-	}
+			$scope.project = response;	
+		});
+	};
 	
-	$scope.saveProject = function(){
-		console.log($scope.project._id);
+		$scope.saveProject = function(){
 		var confirmUpdate = confirm ('Are you sure you want to make changes to project ' + $scope.project._id + '?');
 		if (confirmUpdate == true){				
-				$http.put('/projects/' + $scope.project._id, $scope.project).success(function(response){					
-					refresh();						
+				$http.put('/projects/' + $scope.project._id, $scope.project).success(function(response){
+					alert('Changes have been saved!');
+					$window.location.reload();							
 			})
 			return true;
 		}
 		else {
 			return false;
 		}
-	}
+	};
 	
-	$scope.isCollapsed = true;
 	$scope.cancel = function(){
 		$scope.isCollapsed = true;
 		refresh();
