@@ -7,13 +7,13 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nume/Name</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="supporter.name">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Prenume/Forname</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="supporter.forname">
                               </div>
                           </div>
                           <div class="form-group">
@@ -21,52 +21,88 @@
                                 <div class="col-sm-6">
                                   <select class="form-control">
                                     <option></option>
-                                    <option>Ionescu Ioana - Animal Life - Adăpost pentru câinii abandonați</option>
-                                    <option>Popescu Alex - Prietenii Mocăniței - Tren cu aburi pe Valea Hârtibaciului</option>
+                                    <option ng-repeat="runner in runners" ng-value="runner.name">{{runner.name}} - {{runner.forname}} - {{runner.project}}</option>
                                   </select>
                                 </div>                        
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Adresa/Adress</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="supporter.address">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Număr de telefon/Phone number</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" ng-model="supporter.phone">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Email/Email</label>
                               <div class="col-sm-6">
-                                  <input type="email" class="form-control" id="exampleInputEmail2">
+                                  <input type="email" class="form-control" id="exampleInputEmail2" ng-model="supporter.email">
                               </div>
                           </div>
                           <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Doresc să donez suma/I want to donate:</label>
+                              <div class="col-sm-10">
+                              <div class="radio">
+        						  <label>
+        						    <input type="radio" name="sum" id="sum" value="2" checked ng-model="supporter.sum">
+        						    2 lei/km
+        						  </label>
+        						</div>
+        						<div class="radio">
+        						  <label>
+        						    <input type="radio" name="sum" id="sum" value="6" ng-model="supporter.sum">
+        						    6 lei/km
+        						  </label>
+        						</div>
+                                <div class="radio">
+        						  <label>
+        						    <input type="radio" name="sum" id="sum" value="10" ng-model="supporter.sum">
+        						    10 lei/km
+        						  </label>
+        						</div>
+                                <div class="radio">
+        						  <label>
+        						    <input type="radio" name="sum" id="sum" value="25" ng-model="supporter.sum">
+        						    25 lei/km
+        						  </label>
+        						</div>
+                                <div>
+        						  <label class="collapsed-content">
+                                      <span>Cu suma fixă de/With the fixed ammount:</span>
+        						    <input type="text" class="form-control collapsed-content" ng-model="supporter.sum">
+        						  </label>
+        						</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Doresc să achit donația prin/I want to pay my donation through</label>
+                          <div class="col-sm-10">
                           <div class="radio">
     						  <label>
-    						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    						    <input type="radio" name="payment" id="payment" value="onlinePayment" checked>
     						    Plată online/Online payment
     						  </label>
     						</div>
     						<div class="radio">
     						  <label>
-    						    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    						    <input type="radio" name="payment" id="payment" value="bankTransfer">
     						    Transfer bancar/Bank transfer
     						  </label>
     						</div>
                             <div class="radio">
     						  <label>
-    						    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    						    <input type="radio" name="payment" id="payment" value="cashPayment">
     						    Plată în numerar/Cash payment
     						  </label>
     						</div>
                             </div>
+                          </div>
                       </form>        
-                               <button type="button" class="btn btn-primary">Trimite/Submit</button>
+                               <button type="button" class="btn btn-primary" ng-click="addSupporter()">Trimite/Submit</button>
                     </div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->  	
