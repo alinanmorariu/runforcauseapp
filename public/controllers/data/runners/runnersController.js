@@ -9,6 +9,7 @@ runners.controller('runnersController', ['$scope', '$http', '$window', function(
 			var confirmDeletion = confirm('Are you sure you want to delete runner ' + id + '?');
 			if (confirmDeletion == true) {
 					$http.delete('/runners/' + id).success(function(response){
+						alert('Runner has been deleted!');
 						$window.location.reload();
 				})
 				return true;

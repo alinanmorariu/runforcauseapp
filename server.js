@@ -79,8 +79,8 @@ app.put('/runners/:id', function(req, res){
 		});
 });
 
-app.get('/runners', function(req, res){
-	runnersdb.runners.find(function(err, docs){
+app.get('/supporters', function(req, res){
+	supportersdb.supporters.find(function(err, docs){
 		res.json(docs);
 	});
 });
