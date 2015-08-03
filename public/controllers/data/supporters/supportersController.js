@@ -5,6 +5,12 @@ supporters.controller('supportersController', ['$scope', '$http', '$window', fun
 			$scope.supporters = response;
 		});	
 		
+		//Get runners in dropdown list for editing of supporter
+	    $http.get('/runners').success(function(response){
+			$scope.runners = response;
+		});
+		
+		
 	$scope.removeSupporter = function(id){
 			var confirmDeletion = confirm('Are you sure you want to delete supporter ' + id + '?');
 			if (confirmDeletion == true) {
@@ -26,6 +32,13 @@ supporters.controller('supportersController', ['$scope', '$http', '$window', fun
 	};
 	
 	$scope.saveSupporter = function(){
+		var firstOccurence = $scope.supporter.runner.indexOf("*");
+		var lastOccurence = $scope.supporter.runner.lastIndexOf("*");
+		
+		$scope.supporter.runnerName = $scope.supporter.runner.substring(0, firstOccurence);
+		$scope.supporter.runnerProject = $scope.supporter.runner.substring(firstOccurence+1, lastOccurence);
+		$scope.supporter.runnerRace = $scope.supporter.runner.substring(lastOccurence+1);
+		
 		var confirmUpdate = confirm ('Are you sure you want to make changes to supporter ' + $scope.supporter._id + '?');
 		if (confirmUpdate == true){				
 				$http.put('/supporters/' + $scope.supporter._id, $scope.supporter).success(function(response){

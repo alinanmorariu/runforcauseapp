@@ -108,7 +108,7 @@ app.get('/supporters/:id', function(req, res){
 app.put('/supporters/:id', function(req, res){
 	var id = req.params.id;
 	supportersdb.supporters.findAndModify({query: {_id: mongojs.ObjectId(id)},
-		update: {$set: {name:req.body.name, forname:req.body.forname, dob:req.body.dob, race:req.body.race, project:req.body.project, city:req.body.city, phone:req.body.phone, email:req.body.email}},
+		update: {$set: {name:req.body.name, forname:req.body.forname, runner:req.body.runner, runnerName:req.body.runnerName, runnerRace:req.body.runnerRace, runnerProject:req.body.runnerProject, adress:req.body.address, phone:req.body.phone, email:req.body.email, variableSum:req.body.variableSum, fixedSum:req.body.fixedSum}},
 		new: true}, function(err, doc){
 			res.json(doc);
 		});

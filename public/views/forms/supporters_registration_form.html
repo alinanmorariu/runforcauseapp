@@ -20,7 +20,7 @@
                               <label class="col-sm-2 col-sm-2 control-label">Doresc să susțin alergătorul/I want to support the runner</label>
                                 <div class="col-sm-6">
                                   <select class="form-control" ng-model="supporter.runner">
-                                    <option ng-repeat="runner in runners | orderBy:'name'">{{runner.name}}&nbsp;{{runner.forname}} - {{runner.project}} - {{runner.race}}</option>
+                                    <option ng-repeat="runner in runners | orderBy:'name'">{{runner.name}}&nbsp;{{runner.forname}} * {{runner.project}} * {{runner.race}}</option>
                                   </select>
                                 </div>                        
                           </div>

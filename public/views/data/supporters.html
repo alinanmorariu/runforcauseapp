@@ -16,15 +16,9 @@
                                                               </div>
                                                               <label class="col-sm-6 col-sm-6 control-label">Supported runner</label>
                                                               <div class="col-sm-6">
-                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.runner">
-                                                              </div>
-                                                              <label class="col-sm-6 col-sm-6 control-label">Race</label>
-                                                              <div class="col-sm-6">
-                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.race">
-                                                              </div>
-                                                              <label class="col-sm-6 col-sm-6 control-label">Project</label>
-                                                              <div class="col-sm-6">
-                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.project">
+                                                                  <select class="form-control" style="margin-bottom:8px" ng-model="supporter.runner">
+                                                                        <option ng-repeat="runner in runners | orderBy:'name'">{{runner.name}}&nbsp;{{runner.forname}} * {{runner.project}} * {{runner.race}}</option>
+                                                                  </select>
                                                               </div>
                                                               <label class="col-sm-6 col-sm-6 control-label">Address</label>
                                                               <div class="col-sm-6">
@@ -38,9 +32,13 @@
                                                               <div class="col-sm-6">
                                                                   <input type="email" class="form-control collapsed-input" ng-model="supporter.email">
                                                               </div>
-                                                              <label class="col-sm-6 col-sm-6 control-label">Sum</label>
+                                                              <label class="col-sm-6 col-sm-6 control-label">Variable sum</label>
                                                               <div class="col-sm-6">
-                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.sum">
+                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.variableSum">
+                                                              </div>
+                                                              <label class="col-sm-6 col-sm-6 control-label">Fixed sum</label>
+                                                              <div class="col-sm-6">
+                                                                  <input type="text" class="form-control collapsed-input" ng-model="supporter.fixedSum">
                                                               </div>
                                                               <label class="col-sm-6 col-sm-6 control-label">Payment</label>
                                                               <div class="col-sm-6">
@@ -77,9 +75,9 @@
                                           <tr ng-repeat="supporter in supporters | orderBy:'_id'">
                                               <td>{{supporter.name}}</td>
                                               <td>{{supporter.forname}}</td>
-                                              <td>{{supporter.runner}}</td>
+                                              <td>{{supporter.runnerName}}</td>
             							      <td>{{supporter.runnerRace}}</td>
-            								  <td>{{supporter.project}}</td>
+            								  <td>{{supporter.runnerProject}}</td>
             								  <td>{{supporter.address}}</td>
             								  <td>{{supporter.phone}}</td>
             								  <td>{{supporter.email}}</td>
