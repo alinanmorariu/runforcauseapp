@@ -66,7 +66,8 @@
             								  <th>Address</th>
             								  <th>Phone</th>
             								  <th>Email</th>
-            								  <th>Sum</th>
+            								  <th>Variable Sum</th>
+                                              <th>Fixed Sum</th>
                                               <th>Payment method</th>
                                               <th>Edit</th>
                                               <th>Delete</th>
@@ -77,12 +78,13 @@
                                               <td>{{supporter.name}}</td>
                                               <td>{{supporter.forname}}</td>
                                               <td>{{supporter.runner}}</td>
-            							      <td>{{supporter.race}}</td>
+            							      <td>{{supporter.runnerRace}}</td>
             								  <td>{{supporter.project}}</td>
             								  <td>{{supporter.address}}</td>
             								  <td>{{supporter.phone}}</td>
             								  <td>{{supporter.email}}</td>
-            								  <td>{{supporter.sum}}</td>
+            								  <td>{{supporter.variableSum}}</td>
+                                              <td>{{supporter.fixedSum}}</td>
                                               <td>{{supporter.payment}}</td>
                                               <td>
                                                   <button class="btn btn-primary btn-xs" ng-click="editSupporter(supporter._id)" data-toggle="collapse" data-target="#collapseme"><i class="fa fa-pencil"></i></button>
